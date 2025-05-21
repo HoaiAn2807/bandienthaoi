@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đăng ký tài khoản</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2f2f2f;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-box {
+      background: #3b3b3b;
+      padding: 30px;
+      border-radius: 20px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: none;
+      background-color: #4a4a4a;
+      color: white;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #00bcd4;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0199a4;
+    }
+
+    #message {
+      margin-top: 15px;
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    #homeBtn {
+      display: none;
+      margin-top: 15px;
+      background-color: #4caf50;
+    }
+
+    #homeBtn:hover {
+      background-color: #3f9442;
+    }
+  </style>
+</head>
+<body>
+<div class="form-box">
+  <h2>Đăng Nhập</h2>
+  <input type="text" id="username" placeholder="Tài khoản" />
+  <input type="password" id="password" placeholder="Mật khẩu" />
+  <button onclick="login()">Đăng Nhập</button>
+  <p id="message"></p>
+  <button id="homeBtn" onclick="goHome()">Về trang chủ</button>
+</div>
+
+<script>
+  function login() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+    const message = document.getElementById("message");
+    const homeBtn = document.getElementById("homeBtn");
+
+    if (user.trim() !== "" && pass.trim() !== "") {
+      message.textContent = "Đăng nhập thành công!";
+      homeBtn.style.display = "block";
+    } else {
+      message.textContent = "Vui lòng nhập đầy đủ thông tin.";
+      message.style.color = "#f44336";
+      homeBtn.style.display = "none";
+    }
+  }
+
+  function goHome() {
+  
+    window.location.href = "C:/Users/Acer/Desktop/Downloads/bandienthoai/bandienthoai/index.html"; 
+  }
+</script>
+</body>
+</html>
